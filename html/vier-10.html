@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maak je kaarten - Kwartetmaker</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/main.css">
+
+    <!-- External Scripts-->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <!-- Internal Scripts-->
+
+    <!-- <script src="../js/download.js" defer></script> -->
+
+    <script src="../node_modules/file-saver/dist/FileSaver.min.js"></script>
+
+    <script src="../node_modules/jszip/dist/jszip.min.js"></script>
+
+    <script src="../js/vier.js" defer></script>
+</head>
+
+<body class="min-h-screen background-Image">
+
+    <div class="z-50">
+        <div class="flex justify-center py-4 md:py-8 ">
+            <a href="index.html">
+                <img src="../images/logo.png" class="hover:scale-105" alt="Logo">
+            </a>
+        </div>
+    </div>
+
+
+    <div class="relative flex justify-center mt-8 z-10 items-center">
+
+        <a class="mr-4 transform hover:-translate-x-3 duration-300 hover:scale-110 text-white hover:rotate-4"
+            href="javascript:history.back()">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="26" height="26" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+            </svg>
+        </a>
+
+        <div class="flex w-fit p-3 bg-white rounded-lg text-white gap-3 shadow-xl">
+            <a class="rounded-2xl w-12 text-center bg-slate-200 text-black p-4" href="een.html">
+                1
+            </a>
+
+            <a class="rounded-2xl w-12 text-center bg-slate-200 text-black p-4" href="twee.html">
+                2
+            </a>
+
+            <a class="rounded-2xl w-12 text-center bg-slate-200 text-black p-4" href="twee.html">
+                3
+            </a>
+
+            <div class="rounded-2xl w-12 text-center bg-orange-600 text-white font-extrabold p-4">
+                4
+            </div>
+        </div>
+
+        <a class="ml-4 transform duration-300 hover:-rotate-90 text-white " href="./index.html">
+            <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 24 24">
+                <path fill="currentColor"
+                    d="M16.066 8.995a.75.75 0 1 0-1.06-1.061L12 10.939L8.995 7.934a.75.75 0 1 0-1.06 1.06L10.938 12l-3.005 3.005a.75.75 0 0 0 1.06 1.06L12 13.06l3.005 3.006a.75.75 0 0 0 1.06-1.06L13.062 12l3.005-3.005Z" />
+            </svg>
+        </a>
+
+    </div>
+
+    <div class=" flex justify-center mt-10">
+        <div class="flex justify-center md:w-7/12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 my-5">
+                <div class="col-span-1 md:col-span-2 lg:col-span-4 flex justify-center md:justify-end">
+                    <button id="download-cards"
+                        class="py-4 px-8 bg-green-600 hover:bg-green-700 duration-300 rounded-md text-sm text-white">Download
+                        mijn kwartet</button>
+                </div>
+
+                <!-- Card Begin 1 -->
+                <div class="bg-white rounded-xl py-3 px-2 md:px-3 relative w-8/12 md:w-full mx-auto">
+                    <form class="kaart">
+                        <div class="w-full">
+                            <div class="h-28 md:h-40 relative bg-gray-300 hover:bg-gray-500 rounded-xl">
+                                <input type="file"
+                                    class="imgInput text-transparent opacity-0 rounded-md cursor-pointer z-20 absolute h-full w-full"
+                                    data-card-id="1" accept="image/*">
+                                <label for="fileInput"
+                                    class="absolute inset-0 flex flex-col items-center justify-center cursor-pointer opacity-90 hover:opacity-100">
+                                    <span class="text-black text-sm">Upload Afbeelding</span>
+                                </label>
+                                <div id="image-preview-1" class="w-full h-full max-w-full max-h-full object-cover">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sm:mt-1 md:mt-2 p-1">
+                            <input type="text" class="title font-bold bg-transparent w-1/2" maxlength="26"
+                                placeholder="Title">
+                            <input type="text" class="extra-text font-semibold bg-transparent text-sm mt-2"
+                                placeholder="Extra Text" maxlength="20">
+                            <input type="text" class="description-1 bg-transparent text-xs mt-2" maxlength="26"
+                                placeholder="Description 1">
+                            <input type="text" class="description-2 bg-transparent text-xs" maxlength="26"
+                                placeholder="Description 2">
+                            <input type="text" class="description-3 bg-transparent text-xs" maxlength="26"
+                                data-card-id="1" placeholder="Description 3">
+                            <input type="text" class="description-4 bg-transparent text-xs" maxlength="26"
+                                placeholder="Description 4">
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Card Begin 2 -->
+                <div class="bg-white rounded-xl py-3 px-2 md:px-3 relative w-8/12 md:w-full mx-auto">
+                    <form class="kaart">
+                        <div class="w-full">
+                            <div class="h-28 md:h-40 relative bg-gray-300 hover:bg-gray-500 rounded-xl">
+                                <input type="file"
+                                    class="imgInput text-transparent opacity-0 rounded-md cursor-pointer z-20 absolute h-full w-full"
+                                    data-card-id="2" accept="image/*">
+                                <label for="fileInput"
+                                    class="absolute inset-0 flex flex-col items-center justify-center cursor-pointer opacity-90 hover:opacity-100">
+                                    <span class="text-black text-sm">Upload Afbeelding</span>
+                                </label>
+                                <div id="image-preview-2" class="w-full h-full max-w-full max-h-full object-cover">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sm:mt-1 md:mt-2 p-1">
+                            <input type="text" class="title font-bold bg-transparent w-1/2" maxlength="26"
+                                placeholder="Title">
+                            <input type="text" class="extra-text font-semibold bg-transparent text-sm mt-2"
+                                placeholder="Extra Text" maxlength="20">
+                            <input type="text" class="description-1 bg-transparent text-xs mt-2" maxlength="26"
+                                placeholder="Description 1">
+                            <input type="text" class="description-2 bg-transparent text-xs" maxlength="26"
+                                placeholder="Description 2">
+                            <input type="text" class="description-3 bg-transparent text-xs" maxlength="26"
+                                data-card-id="1" placeholder="Description 3">
+                            <input type="text" class="description-4 bg-transparent text-xs" maxlength="26"
+                                placeholder="Description 4">
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Card Begin 3 -->
+                <div class="bg-white rounded-xl py-3 px-2 md:px-3 relative w-8/12 md:w-full mx-auto">
+                    <form class="kaart">
+                        <div class="w-full">
+                            <div class="h-28 md:h-40 relative bg-gray-300 hover:bg-gray-500 rounded-xl">
+                                <input type="file"
+                                    class="imgInput text-transparent opacity-0 rounded-md cursor-pointer z-20 absolute h-full w-full"
+                                    data-card-id="3" accept="image/*">
+                                <label for="fileInput"
+                                    class="absolute inset-0 flex flex-col items-center justify-center cursor-pointer opacity-90 hover:opacity-100">
+                                    <span class="text-black text-sm">Upload Afbeelding</span>
+                                </label>
+                                <div id="image-preview-3" class="w-full h-full max-w-full max-h-full object-cover">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sm:mt-1 md:mt-2 p-1">
+                            <input type="text" class="title font-bold bg-transparent w-1/2" maxlength="26"
+                                placeholder="Title">
+                            <input type="text" class="extra-text font-semibold bg-transparent text-sm mt-2"
+                                placeholder="Extra Text" maxlength="20">
+                            <input type="text" class="description-1 bg-transparent text-xs mt-2" maxlength="26"
+                                placeholder="Description 1">
+                            <input type="text" class="description-2 bg-transparent text-xs" maxlength="26"
+                                placeholder="Description 2">
+                            <input type="text" class="description-3 bg-transparent text-xs" maxlength="26"
+                                data-card-id="1" placeholder="Description 3">
+                            <input type="text" class="description-4 bg-transparent text-xs" maxlength="26"
+                                placeholder="Description 4">
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Card Begin 4 -->
+                <div class="bg-white rounded-xl py-3 px-2 md:px-3 relative w-8/12 md:w-full mx-auto">
+                    <form class="kaart">
+                        <div class="w-full">
+                            <div class="h-28 md:h-40 relative bg-gray-300 hover:bg-gray-500 rounded-xl">
+                                <input type="file"
+                                    class="imgInput text-transparent opacity-0 rounded-md cursor-pointer z-20 absolute h-full w-full"
+                                    data-card-id="4" accept="image/*">
+                                <label for="fileInput"
+                                    class="absolute inset-0 flex flex-col items-center justify-center cursor-pointer opacity-90 hover:opacity-100">
+                                    <span class="text-black text-sm">Upload Afbeelding</span>
+                                </label>
+                                <div id="image-preview-4" class="w-full h-full max-w-full max-h-full object-cover">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sm:mt-1 md:mt-2 p-1">
+                            <input type="text" class="title font-bold bg-transparent w-1/2" maxlength="26"
+                                placeholder="Title">
+                            <input type="text" class="extra-text font-semibold bg-transparent text-sm mt-2"
+                                placeholder="Extra Text" maxlength="20">
+                            <input type="text" class="description-1 bg-transparent text-xs mt-2" maxlength="26"
+                                placeholder="Description 1">
+                            <input type="text" class="description-2 bg-transparent text-xs" maxlength="26"
+                                placeholder="Description 2">
+                            <input type="text" class="description-3 bg-transparent text-xs" maxlength="26"
+                                data-card-id="1" placeholder="Description 3">
+                            <input type="text" class="description-4 bg-transparent text-xs" maxlength="26"
+                                placeholder="Description 4">
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Card Begin 5 -->
+                <div class="bg-white rounded-xl py-3 px-2 md:px-3 relative w-8/12 md:w-full mx-auto">
+                    <form class="kaart">
+                        <div class="w-full">
+                            <div class="h-28 md:h-40 relative bg-gray-300 hover:bg-gray-500 rounded-xl">
+                                <input type="file"
+                                    class="imgInput text-transparent opacity-0 rounded-md cursor-pointer z-20 absolute h-full w-full"
+                                    data-card-id="5" accept="image/*">
+                                <label for="fileInput"
+                                    class="absolute inset-0 flex flex-col items-center justify-center cursor-pointer opacity-90 hover:opacity-100">
+                                    <span class="text-black text-sm">Upload Afbeelding</span>
+                                </label>
+                                <div id="image-preview-5" class="w-full h-full max-w-full max-h-full object-cover">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sm:mt-1 md:mt-2 p-1">
+                            <input type="text" class="title font-bold bg-transparent w-1/2" maxlength="26"
+                                placeholder="Title">
+                            <input type="text" class="extra-text font-semibold bg-transparent text-sm mt-2"
+                                placeholder="Extra Text" maxlength="20">
+                            <input type="text" class="description-1 bg-transparent text-xs mt-2" maxlength="26"
+                                placeholder="Description 1">
+                            <input type="text" class="description-2 bg-transparent text-xs" maxlength="26"
+                                placeholder="Description 2">
+                            <input type="text" class="description-3 bg-transparent text-xs" maxlength="26"
+                                data-card-id="1" placeholder="Description 3">
+                            <input type="text" class="description-4 bg-transparent text-xs" maxlength="26"
+                                placeholder="Description 4">
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Card Begin 6 -->
+                <div class="bg-white rounded-xl py-3 px-2 md:px-3 relative w-8/12 md:w-full mx-auto">
+                    <form class="kaart">
+                        <div class="w-full">
+                            <div class="h-28 md:h-40 relative bg-gray-300 hover:bg-gray-500 rounded-xl">
+                                <input type="file"
+                                    class="imgInput text-transparent opacity-0 rounded-md cursor-pointer z-20 absolute h-full w-full"
+                                    data-card-id="6" accept="image/*">
+                                <label for="fileInput"
+                                    class="absolute inset-0 flex flex-col items-center justify-center cursor-pointer opacity-90 hover:opacity-100">
+                                    <span class="text-black text-sm">Upload Afbeelding</span>
+                                </label>
+                                <div id="image-preview-6" class="w-full h-full max-w-full max-h-full object-cover">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sm:mt-1 md:mt-2 p-1">
+                            <input type="text" class="title font-bold bg-transparent w-1/2" maxlength="26"
+                                placeholder="Title">
+                            <input type="text" class="extra-text font-semibold bg-transparent text-sm mt-2"
+                                placeholder="Extra Text" maxlength="20">
+                            <input type="text" class="description-1 bg-transparent text-xs mt-2" maxlength="26"
+                                placeholder="Description 1">
+                            <input type="text" class="description-2 bg-transparent text-xs" maxlength="26"
+                                placeholder="Description 2">
+                            <input type="text" class="description-3 bg-transparent text-xs" maxlength="26"
+                                data-card-id="1" placeholder="Description 3">
+                            <input type="text" class="description-4 bg-transparent text-xs" maxlength="26"
+                                placeholder="Description 4">
+                        </div>
+                    </form>
+                </div>
+
+
+                <!-- Card Begin 7 -->
+                <div class="bg-white rounded-xl py-3 px-2 md:px-3 relative w-8/12 md:w-full mx-auto">
+                    <form class="kaart">
+                        <div class="w-full">
+                            <div class="h-28 md:h-40 relative bg-gray-300 hover:bg-gray-500 rounded-xl">
+                                <input type="file"
+                                    class="imgInput text-transparent opacity-0 rounded-md cursor-pointer z-20 absolute h-full w-full"
+                                    data-card-id="7" accept="image/*">
+                                <label for="fileInput"
+                                    class="absolute inset-0 flex flex-col items-center justify-center cursor-pointer opacity-90 hover:opacity-100">
+                                    <span class="text-black text-sm">Upload Afbeelding</span>
+                                </label>
+                                <div id="image-preview-7" class="w-full h-full max-w-full max-h-full object-cover">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sm:mt-1 md:mt-2 p-1">
+                            <input type="text" class="title font-bold bg-transparent w-1/2" maxlength="26"
+                                placeholder="Title">
+                            <input type="text" class="extra-text font-semibold bg-transparent text-sm mt-2"
+                                placeholder="Extra Text" maxlength="20">
+                            <input type="text" class="description-1 bg-transparent text-xs mt-2" maxlength="26"
+                                placeholder="Description 1">
+                            <input type="text" class="description-2 bg-transparent text-xs" maxlength="26"
+                                placeholder="Description 2">
+                            <input type="text" class="description-3 bg-transparent text-xs" maxlength="26"
+                                data-card-id="1" placeholder="Description 3">
+                            <input type="text" class="description-4 bg-transparent text-xs" maxlength="26"
+                                placeholder="Description 4">
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Card Begin 8 -->
+                <div class="bg-white rounded-xl py-3 px-2 md:px-3 relative w-8/12 md:w-full mx-auto">
+                    <form class="kaart">
+                        <div class="w-full">
+                            <div class="h-28 md:h-40 relative bg-gray-300 hover:bg-gray-500 rounded-xl">
+                                <input type="file"
+                                    class="imgInput text-transparent opacity-0 rounded-md cursor-pointer z-20 absolute h-full w-full"
+                                    data-card-id="8" accept="image/*">
+                                <label for="fileInput"
+                                    class="absolute inset-0 flex flex-col items-center justify-center cursor-pointer opacity-90 hover:opacity-100">
+                                    <span class="text-black text-sm">Upload Afbeelding</span>
+                                </label>
+                                <div id="image-preview-8" class="w-full h-full max-w-full max-h-full object-cover">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sm:mt-1 md:mt-2 p-1">
+                            <input type="text" class="title font-bold bg-transparent w-1/2" maxlength="26"
+                                placeholder="Title">
+                            <input type="text" class="extra-text font-semibold bg-transparent text-sm mt-2"
+                                placeholder="Extra Text" maxlength="20">
+                            <input type="text" class="description-1 bg-transparent text-xs mt-2" maxlength="26"
+                                placeholder="Description 1">
+                            <input type="text" class="description-2 bg-transparent text-xs" maxlength="26"
+                                placeholder="Description 2">
+                            <input type="text" class="description-3 bg-transparent text-xs" maxlength="26"
+                                data-card-id="1" placeholder="Description 3">
+                            <input type="text" class="description-4 bg-transparent text-xs" maxlength="26"
+                                placeholder="Description 4">
+                        </div>
+                    </form>
+                </div>
+
+
+                <!-- Card Begin 9 -->
+                <div class="bg-white rounded-xl py-3 px-2 md:px-3 relative w-8/12 md:w-full mx-auto">
+                    <form class="kaart">
+                        <div class="w-full">
+                            <div class="h-28 md:h-40 relative bg-gray-300 hover:bg-gray-500 rounded-xl">
+                                <input type="file"
+                                    class="imgInput text-transparent opacity-0 rounded-md cursor-pointer z-20 absolute h-full w-full"
+                                    data-card-id="9" accept="image/*">
+                                <label for="fileInput"
+                                    class="absolute inset-0 flex flex-col items-center justify-center cursor-pointer opacity-90 hover:opacity-100">
+                                    <span class="text-black text-sm">Upload Afbeelding</span>
+                                </label>
+                                <div id="image-preview-9" class="w-full h-full max-w-full max-h-full object-cover">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sm:mt-1 md:mt-2 p-1">
+                            <input type="text" class="title font-bold bg-transparent w-1/2" maxlength="26"
+                                placeholder="Title">
+                            <input type="text" class="extra-text font-semibold bg-transparent text-sm mt-2"
+                                placeholder="Extra Text" maxlength="20">
+                            <input type="text" class="description-1 bg-transparent text-xs mt-2" maxlength="26"
+                                placeholder="Description 1">
+                            <input type="text" class="description-2 bg-transparent text-xs" maxlength="26"
+                                placeholder="Description 2">
+                            <input type="text" class="description-3 bg-transparent text-xs" maxlength="26"
+                                data-card-id="1" placeholder="Description 3">
+                            <input type="text" class="description-4 bg-transparent text-xs" maxlength="26"
+                                placeholder="Description 4">
+                        </div>
+                    </form>
+                </div>
+
+
+                <!-- Card Begin 10 -->
+                <div class="bg-white rounded-xl py-3 px-2 md:px-3 relative w-8/12 md:w-full mx-auto">
+                    <form class="kaart">
+                        <div class="w-full">
+                            <div class="h-28 md:h-40 relative bg-gray-300 hover:bg-gray-500 rounded-xl">
+                                <input type="file"
+                                    class="imgInput text-transparent opacity-0 rounded-md cursor-pointer z-20 absolute h-full w-full"
+                                    data-card-id="10" accept="image/*">
+                                <label for="fileInput"
+                                    class="absolute inset-0 flex flex-col items-center justify-center cursor-pointer opacity-90 hover:opacity-100">
+                                    <span class="text-black text-sm">Upload Afbeelding</span>
+                                </label>
+                                <div id="image-preview-10" class="w-full h-full max-w-full max-h-full object-cover">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sm:mt-1 md:mt-2 p-1">
+                            <input type="text" class="title font-bold bg-transparent w-1/2" maxlength="26"
+                                placeholder="Title">
+                            <input type="text" class="extra-text font-semibold bg-transparent text-sm mt-2"
+                                placeholder="Extra Text" maxlength="20">
+                            <input type="text" class="description-1 bg-transparent text-xs mt-2" maxlength="26"
+                                placeholder="Description 1">
+                            <input type="text" class="description-2 bg-transparent text-xs" maxlength="26"
+                                placeholder="Description 2">
+                            <input type="text" class="description-3 bg-transparent text-xs" maxlength="26"
+                                data-card-id="1" placeholder="Description 3">
+                            <input type="text" class="description-4 bg-transparent text-xs" maxlength="26"
+                                placeholder="Description 4">
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spelsoort - Kwartetmaker</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/main.css">
+    <!-- External Scripts-->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <!-- Internal Scripts-->
+    <script src="../js/twee.js" defer></script>
+
+</head>
+
+<body class="min-h-screen background-Image">
+
+    <div class="z-50">
+        <div class="flex justify-center py-4 md:py-8 ">
+            <a href="index.html">
+                <img src="../images/logo.png" class="hover:scale-105" alt="Logo">
+            </a>
+        </div>
+    </div>
+
+
+
+    <div class="relative flex justify-center mt-8 z-10 items-center">
+
+        <a class="mr-4 transform hover:-translate-x-3 duration-300 hover:scale-110 text-white hover:rotate-4"
+            href="javascript:history.back()">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="26" height="26" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+            </svg>
+        </a>
+
+        <div class="flex w-fit p-3 bg-white rounded-lg text-white gap-3 shadow-xl">
+            <a class="rounded-2xl w-12 text-center bg-slate-200 text-black p-4" href="een.html">
+                1
+            </a>
+
+            <div class="rounded-2xl w-12 text-center bg-orange-600 text-white font-extrabold p-4">
+                2
+            </div>
+
+            <div class="rounded-2xl w-12 text-center bg-slate-200 text-black p-4">
+                3
+            </div>
+
+            <div class="rounded-2xl w-12 text-center bg-slate-200 text-black p-4">
+                3
+            </div>
+        </div>
+
+        <a class="ml-4 transform duration-300 hover:-rotate-90 text-white " href="./index.html">
+            <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 24 24">
+                <path fill="currentColor"
+                    d="M16.066 8.995a.75.75 0 1 0-1.06-1.061L12 10.939L8.995 7.934a.75.75 0 1 0-1.06 1.06L10.938 12l-3.005 3.005a.75.75 0 0 0 1.06 1.06L12 13.06l3.005 3.006a.75.75 0 0 0 1.06-1.06L13.062 12l3.005-3.005Z" />
+            </svg>
+        </a>
+
+    </div>
+
+
+    <div class="relative flex justify-center z-10 my-5">
+        <div class="flex justify-center w-9/12 mb-5 md:mb-0">
+            <div class="hidden" id="soorten">
+                <div class="grid grid-cols-2 gap-4 w-fit h-fit">
+
+                    <div class="col-span-2 p-4 bg-white rounded-md">
+                        <p class="font-bold text-xl">Kies een spelsoort</p>
+                        <p class="text-sm text-gray-500">Kies tussen het klassieke of informatieve spel!</p>
+
+                    </div>
+
+                    <div class="flex flex-col p-8 bg-white rounded-md w-54 h-88 col-span-2 lg:col-span-1 ">
+                        <div class="flex justify-center flex-col items-center text-center">
+
+                            <img src="../images/twee/basis.png" alt="" class="mb-4 w-48 h-32">
+
+                            <p class="font-bold">Basis</p>
+                            <p class="text-sm text-gray-400 text-sm">Bevat een titel, afbeelding, keuzewoorden</p>
+
+                            <button type="button" id="kwartet-classic"
+                                class="text-white duration-300 mt-4 bg-orange-600 hover:bg-orange-500 w-fit focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
+                                Kies deze set
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                                </svg>
+
+                            </button>
+                        </div>
+                    </div>
+
+
+                    <div class="flex flex-col p-8 bg-white rounded-md w-54 h-88 col-span-2 lg:col-span-1">
+
+                        <div class="flex justify-center flex-col items-center text-center">
+                            <img src="../images/twee/informatief.png" alt="" class="mb-4 w-48 h-32">
+
+                            <p class="font-bold">Informatief</p>
+                            <p class="text-sm text-gray-400 text-sm">Bevat een titel, afbeelding, informatieveld,
+                                keuzewoorden
+                            </p>
+
+                            <button type="button" id="kwartet-detailed"
+                                class="text-white duration-300 mt-4 bg-orange-600 hover:bg-orange-500 w-fit focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
+                                Kies deze set
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                                </svg>
+
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
