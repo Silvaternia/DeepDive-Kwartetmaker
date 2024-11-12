@@ -11,3 +11,10 @@ Since he owns it, I don't have the privileges to change its visibility settings 
 
 Please check out the original!
 [Visit Project](https://github.com/devrazer/deepdive-september)
+
+
+# To Do
+
+1. Changing variable + page names since they're quite lacking
+2. Cleaning up the JS
+3. Redesign
