@@ -1,7 +1,14 @@
 {
+  "scripts": {
+    "watch": "tailwindcss -i ./css/input.css -o ./css/output.css --watch",
+    "build": "tailwindcss -i ./css/input.css -o ./css/output.css --minify"
+  },
   "dependencies": {
     "@zip.js/zip.js": "^2.7.29",
     "file-saver": "^2.0.5",
     "jszip": "^3.10.1"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.14"
   }
 }
