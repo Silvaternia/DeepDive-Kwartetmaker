@@ -1,9 +1,3 @@
-window.addEventListener("load", function () {
-    setTimeout(function () {
-        $("#soorten").fadeIn();
-    }, 25);
-});
-
 // -- Kies een soort spel -- \\
 
 if (localStorage.getItem("kwartet-aantal") === null) {
@@ -18,7 +12,7 @@ classicButton.addEventListener("click", function () {
     $("#soorten").fadeOut();
 
     setTimeout(function () {
-        window.location.href = "drie.html";
+        window.location.href = "kwartetInfo.html";
     }, 50);
 });
 detailedButton.addEventListener("click", function () {
@@ -26,6 +20,6 @@ detailedButton.addEventListener("click", function () {
     $("#soorten").fadeOut();
 
     setTimeout(function () {
-        window.location.href = "drie.html";
+        window.location.href = "kwartetInfo.html";
     }, 50);
 });

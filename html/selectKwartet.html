@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kwartetset - Kwartetmaker</title>
+    <title>Select Kwarter</title>
 
     <!-- CSS-->
     <link rel="stylesheet" href="../css/main.css">
@@ -14,7 +14,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
     <!-- Internal Scripts-->
-    <script src="../js/een.js" defer></script>
+    <script src="../js/selectKwartet.js" defer></script>
 </head>
 
 <body class="min-h-screen background-Image">
@@ -27,8 +27,7 @@
         </div>
     </div>
 
-
-    <div class="relative flex justify-center w-screen mt-8 z-10 items-center">
+    <nav class="relative flex justify-center w-screen mt-8 z-10 items-center">
 
         <a class="mr-4 transform hover:-translate-x-3 duration-300 hover:scale-110 text-white hover:rotate-4"
             href="javascript:history.back()">
@@ -63,18 +62,18 @@
             </svg>
         </a>
 
-    </div>
+    </nav>
 
     <div class=" relative flex justify-center z-10 mt-8">
 
         <div class="flex justify-center w-9/12 mb-5 md:mb-0">
 
-            <div class="hidden" id="kaarten">
+            <div id="select-amount">
                 <div class="grid grid-cols-2 gap-4 w-fit h-fit">
 
                     <button
                         class="flex flex-col p-8 bg-white rounded-md w-fit h-64 lg:h-fit hover:bg-gray-200 duration-300 items-center hover:-rotate-3"
-                        id="kwartet-acht">
+                        id="kwartet-8">
                         <img src="../images/card-Sets.png" alt="" class="mb-4">
 
                         <p class="font-bold uppercase text-sm">8-kwartetten</p>
@@ -83,7 +82,7 @@
 
                     <button
                         class="flex flex-col p-8 bg-white rounded-md w-fit h-64 lg:h-fit hover:bg-gray-200 duration-300 items-center hover:rotate-3"
-                        id="kwartet-tien">
+                        id="kwartet-10">
                         <img src="../images/card-Sets.png" alt="" class="mb-4">
 
                         <p class="font-bold uppercase text-sm">10-kwartetten</p>
@@ -92,7 +91,7 @@
 
                     <button
                         class="flex md:flex-row flex-col p-8 bg-white rounded-md h-fit col-span-2 items-center hover:bg-gray-200 duration-300 hover:rotate-3 mx-auto"
-                        id="kwartet-twaalf">
+                        id="kwartet-12">
                         <img src="../images/card-Sets.png" alt="" class="">
 
                         <div class="flex flex-col lg:ml-16">

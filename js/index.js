@@ -1,3 +1,3 @@
-window.addEventListener("load", function () {
-    $(".overlay").fadeOut(450);
-});
+// window.addEventListener("load", function () {
+//     $(".overlay").fadeOut(450);
+// });
