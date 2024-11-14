@@ -14,57 +14,39 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
     <!-- Internal Scripts-->
-    <script src="../js/selectKwartet.js" defer></script>
+    <script src="../js/index.js" type="module"></script>
 </head>
 
 <body class="min-h-screen background-Image">
 
-    <div class="z-50">
-        <div class="flex justify-center py-8 ">
-            <a href="../index.html">
-                <img src="../images/logo.png" class="hover:scale-105" alt="Logo">
-            </a>
-        </div>
+    <div class="flex justify-center py-4 md:py-8 z-20">
+        <a href="index.html">
+            <img src="../images/logo.png" class="hover:scale-105" alt="Logo" />
+        </a>
     </div>
 
-    <nav class="relative flex justify-center w-screen mt-8 z-10 items-center">
-
-        <a class="mr-4 transform hover:-translate-x-3 duration-300 hover:scale-110 text-white hover:rotate-4"
-            href="javascript:history.back()">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="26" height="26" viewBox="0 0 24 24"
-                stroke-width="1.5" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+    <header class="flex justify-center mt-8 items-center">
+        <!-- previous page arrow -->
+        <a class="mr-4 transform hover:-translate-x-3 duration-300 hover:scale-110 text-white hover:rotate-4" href="">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
             </svg>
         </a>
 
-        <div class="flex w-fit p-3 bg-white rounded-lg text-white gap-3 shadow-xl">
-            <div class="rounded-2xl w-12 text-center bg-orange-600 text-white font-extrabold p-4">
-                1
-            </div>
+        <ul class="flex px-3 py-2 bg-white rounded-lg gap-3" id="step-navigation"></ul>
 
-            <div class="rounded-2xl w-12 text-center bg-slate-200 text-black p-4">
-                2
-            </div>
-
-            <div class="rounded-2xl w-12 text-center bg-slate-200 text-black p-4">
-                3
-            </div>
-
-            <div class="rounded-2xl w-12 text-center bg-slate-200 text-black p-4">
-                4
-            </div>
-        </div>
-
-        <a class="ml-4 transform duration-300 hover:-rotate-90 text-white " href="./index.html">
+        <!-- Arrow go back to html? -->
+        <a class="ml-4 transform duration-300 hover:-rotate-90 text-white " href="#">
             <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 24 24">
                 <path fill="currentColor"
                     d="M16.066 8.995a.75.75 0 1 0-1.06-1.061L12 10.939L8.995 7.934a.75.75 0 1 0-1.06 1.06L10.938 12l-3.005 3.005a.75.75 0 0 0 1.06 1.06L12 13.06l3.005 3.006a.75.75 0 0 0 1.06-1.06L13.062 12l3.005-3.005Z" />
             </svg>
         </a>
+    </header>
 
-    </nav>
 
-    <div class=" relative flex justify-center z-10 mt-8">
+    <div class="flex justify-center z-10 mt-8">
 
         <div class="flex justify-center w-9/12 mb-5 md:mb-0">
 
@@ -105,6 +87,7 @@
         </div>
 
     </div>
+
 </body>
 
 </html>
