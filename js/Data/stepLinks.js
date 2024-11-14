@@ -1,4 +1,5 @@
 const navigationCon = document.getElementById("step-navigation");
+const classes = "rounded-2xl w-12 text-center text-black  p-4".split(" ");
 
 const stepLinks = [
     { name: "1", link: "#" },
@@ -10,6 +11,7 @@ const stepLinks = [
 const generateStepLinks = () => {
     stepLinks.forEach((step) => {
         const stepLink = document.createElement("a");
+        classes.forEach(cls => stepLink.classList.add(cls));
         stepLink.textContent = step.name;
         stepLink.href = step.link;
         navigationCon.appendChild(stepLink);
