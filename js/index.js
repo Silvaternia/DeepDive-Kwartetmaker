@@ -1,4 +1,3 @@
-import { generateStepLinks } from "./Data/stepLinks.js";
 
 // To DO
 // Dynamic card generation based off LocalStorage value
@@ -6,6 +5,3 @@ import { generateStepLinks } from "./Data/stepLinks.js";
 // Download the cards as images
 // Dynamic generate the step caards in index.html
 // Dynamic generation of the navigation and reverse step 
-
-
-generateStepLinks();

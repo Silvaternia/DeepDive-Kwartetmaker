@@ -4,21 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maak je kaarten - Kwartetmaker</title>
+    <title>Hoeveel kaarten?</title>
 
     <!-- CSS-->
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/output.css">
 
-    <!-- External Scripts-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-
     <!-- Internal Scripts-->
-    <script src="../js/vier.js" defer></script>
-    <script src="../js/download.js" defer></script>
+    <script src="../js/Data/navLinks.js" type="module"></script>
 
-    <script src="../node_modules/file-saver/dist/"></script>
-    <script src="../node_modules/jszip/dist/jszip.min.js"></script>
 </head>
 
 <body class="min-h-screen background-Image">
@@ -49,6 +43,36 @@
         </a>
     </header>
 
+
+    <div class="relative flex justify-center mt-8 z-10 mb-5">
+        <div class="hidden lg:w-6/12 py-4 px-8 bg-white rounded-lg" id="namen">
+
+            <div class="my-4">
+                <p class="font-bold text-xl">Geef je kwartetten een naam.</p>
+                <p class="text-sm text-gray-500">Je hebt gekozen voor <span id="aantal-cats"></span> categorieën</p>
+            </div>
+
+
+            <div class="grid lg:grid-cols-4 gap-4" id="name-category">
+
+            </div>
+
+
+
+            <div class="mt-2">
+                <button type="button" id="create-category"
+                    class="text-white duration-300 bg-orange-600 hover:bg-orange-500 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
+                    Ga verder
+                    <svg class=" w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 5h12m0 0L9 1m4 4L9 9" />
+                    </svg>
+                </button>
+            </div>
+
+        </div>
+    </div>
 
 </body>
 

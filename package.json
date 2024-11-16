@@ -3,11 +3,6 @@
     "watch": "tailwindcss -i ./css/input.css -o ./css/output.css --watch",
     "build": "tailwindcss -i ./css/input.css -o ./css/output.css --minify"
   },
-  "dependencies": {
-    "@zip.js/zip.js": "^2.7.29",
-    "file-saver": "^2.0.5",
-    "jszip": "^3.10.1"
-  },
   "devDependencies": {
     "@eslint/js": "^9.14.0",
     "eslint": "^9.14.0",
