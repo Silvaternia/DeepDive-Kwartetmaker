@@ -1,5 +1,5 @@
-const navigationCon = document.getElementById("step-navigation");
-const classes = "rounded-2xl text-center font-medium text-black p-4".split(" ");
+const navigationCon = document.getElementById("navSteps");
+const classes = "rounded-md text-center font-medium text-black px-4 py-2".split(" ");
 
 const stepLinks = [
     { name: "1", link: "./kwartetSelector.html" },
@@ -16,7 +16,7 @@ const generateStepLinks = () => {
         const stepLink = document.createElement("a");
         classes.forEach(cls => stepLink.classList.add(cls));
         if (isActive) {
-            stepLink.classList.add("bg-red-500");
+            stepLink.classList.add("bg-orange-500/80");
         }
         stepLink.textContent = step.name;
         stepLink.href = step.link;
@@ -32,4 +32,4 @@ const checkCurrentUrl = (url) => {
     return currentPath.includes(currentUrl);
 };
 
-generateStepLinks();
+export default generateStepLinks;
