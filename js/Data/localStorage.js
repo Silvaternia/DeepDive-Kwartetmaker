@@ -1,26 +1,20 @@
-const selectContainer = document.getElementById("selectCardAmount");
-
-
-// Choose the amount of cards you want 
 const selectCardAmount = () => {
+    const selectContainer = document.getElementById("selectCardAmount");
+
+    if (!selectContainer) return;
+
     selectContainer.addEventListener("click", (event) => {
-        const id = event.target.closest("button").id;
-        if (!id) return;
+        const button = event.target.closest("button");
+        if (!button) return;
 
+        const id = button.id;
         const amount = parseInt(id.replace("kwartet-", ""), 10);
-        console.log("amount");
 
-        // if (!isNaN(amount)) {
-        //     if (localStorage.getItem("kwartet-aantal")) {
-        //         localStorage.removeItem("kwartet-aantal");
-        //     } else {
-        //         localStorage.setItem("kwartet-aantal", amount);
-        //         console.log(amount);
-        //     }
-        // }
+        if (amount !== 8 && amount !== 10 && amount !== 12) return;
 
+        localStorage.setItem("kwartet-aantal", amount);
+        document.location.href = "./kwartetType.html";
     });
 };
 
-export default selectCardAmount();
-
+export default selectCardAmount;

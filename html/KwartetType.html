@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../css/output.css">
 
     <!-- Internal Scripts-->
-    <script src="../js/Data/navLinks.js" type="module"></script>
+    <script src="../js/main.js" type="module"></script>
 
 </head>
 
@@ -23,7 +23,7 @@
         </a>
     </div>
 
-    <header class="flex justify-center mt-8 items-center">
+    <nav class="flex justify-center mt-8 items-center">
         <!-- previous page arrow -->
         <a class="mr-4 transform hover:-translate-x-3 duration-300 hover:scale-110 text-white hover:rotate-4" href="">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -32,7 +32,7 @@
             </svg>
         </a>
 
-        <ul class="flex px-3 py-2 bg-white rounded-lg gap-3" id="step-navigation"></ul>
+        <ul class="flex px-3 py-2 bg-white rounded-md gap-3" id="navSteps"></ul>
 
         <!-- Arrow go back to html? -->
         <a class="ml-4 transform duration-300 hover:-rotate-90 text-white " href="#">
@@ -41,69 +41,63 @@
                     d="M16.066 8.995a.75.75 0 1 0-1.06-1.061L12 10.939L8.995 7.934a.75.75 0 1 0-1.06 1.06L10.938 12l-3.005 3.005a.75.75 0 0 0 1.06 1.06L12 13.06l3.005 3.006a.75.75 0 0 0 1.06-1.06L13.062 12l3.005-3.005Z" />
             </svg>
         </a>
-    </header>
+    </nav>
 
-    <div class="relative flex justify-center z-10 my-5">
-        <div class="flex justify-center w-9/12 mb-5 md:mb-0">
-            <div class="hidden" id="soorten">
-                <div class="grid grid-cols-2 gap-4 w-fit h-fit">
+    <main class="flex justify-center my-5 w-full">
 
-                    <div class="col-span-2 p-4 bg-white rounded-md">
-                        <p class="font-bold text-xl">Kies een spelsoort</p>
-                        <p class="text-sm text-gray-500">Kies tussen het klassieke of informatieve spel!</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 px-4" id="gameType">
 
-                    </div>
+            <div class="col-span-2 p-4 bg-white rounded-md">
+                <p class="font-bold text-xl text-black/95">Kies een spelsoort</p>
+                <p class="text-black/40 mt-1">Kies tussen het klassieke of informatieve spel!</p>
+            </div>
 
-                    <div class="flex flex-col p-8 bg-white rounded-md w-54 h-88 col-span-2 lg:col-span-1 ">
-                        <div class="flex justify-center flex-col items-center text-center">
+            <section class="flex flex-col p-8 bg-white rounded-md col-span-2 md:col-span-1 ">
 
-                            <img src="../images/twee/basis.png" alt="" class="mb-4 w-48 h-32">
+                <div class="flex justify-center flex-col items-center text-center">
 
-                            <p class="font-bold">Basis</p>
-                            <p class="text-sm text-gray-400">Bevat een titel, afbeelding, keuzewoorden</p>
+                    <img src="../images/twee/basis.png" alt="classic kwartet set" class="mb-4 w-48 h-32">
 
-                            <button type="button" id="kwartet-classic" class="text-white duration-300 mt-4 bg-orange-600 hover:bg-orange-500 w-fit 
-                                font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
-                                Kies deze set
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-4">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                                </svg>
+                    <p class="font-bold text-lg">Basis</p>
+                    <p class=" text-gray-400">Bevat een titel, afbeelding, keuzewoorden</p>
 
-                            </button>
-                        </div>
-                    </div>
+                    <button id="kwartet-classic"
+                        class="text-white mt-4 bg-orange-600 hover:bg-orange-700 w-fit font-medium rounded-md px-5 py-2.5 gap-2 text-center inline-flex items-center">
+                        Kies deze set
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 20" stroke-width="2"
+                            stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                        </svg>
+                    </button>
+                </div>
+            </section>
 
+            <section class="flex flex-col p-8 bg-white rounded-md col-span-2 md:col-span-1">
+                <div class="flex justify-center flex-col items-center text-center">
+                    <img src="../images/twee/informatief.png" alt="detailed kwartet set" class="mb-4 w-48 h-32">
 
-                    <div class="flex flex-col p-8 bg-white rounded-md w-54 h-88 col-span-2 lg:col-span-1">
+                    <p class="font-bold text-black/95">Informatief</p>
+                    <p class="text-black/95">Bevat een titel, afbeelding, informatieveld,
+                        keuzewoorden
+                    </p>
 
-                        <div class="flex justify-center flex-col items-center text-center">
-                            <img src="../images/twee/informatief.png" alt="" class="mb-4 w-48 h-32">
+                    <button id="kwartet-detailed"
+                        class="text-white mt-4 bg-orange-600 hover:bg-orange-700 w-fit font-medium rounded-md px-5 py-2.5 gap-2 text-center inline-flex items-center">
+                        Kies deze set
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 20" stroke-width="2"
+                            stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                        </svg>
+                    </button>
 
-                            <p class="font-bold">Informatief</p>
-                            <p class="text-sm text-gray-400">Bevat een titel, afbeelding, informatieveld,
-                                keuzewoorden
-                            </p>
-
-                            <button type="button" id="kwartet-detailed"
-                                class="text-white duration-300 mt-4 bg-orange-600 hover:bg-orange-500 w-fit  font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center">
-                                Kies deze set
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                    stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ml-4">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                                </svg>
-
-                            </button>
-                        </div>
-
-                    </div>
 
                 </div>
-            </div>
+            </section>
         </div>
-    </div>
+    </main>
+
 </body>
 
 </html>
